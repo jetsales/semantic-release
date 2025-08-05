@@ -20,7 +20,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -65,7 +65,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       semantic_version: 19.0.5  # It is recommended to specify a version range
                                 # for semantic-release when using
@@ -75,7 +75,7 @@ steps:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-If no version range is specified with `cycjimmy/semantic-release-action@v4` then [semantic-release](https://github.com/semantic-release/semantic-release/) version [21.1.1](https://github.com/semantic-release/semantic-release/releases/tag/v21.1.1) is used.
+If no version range is specified with `jetsales/semantic-release@main` then [semantic-release](https://github.com/semantic-release/semantic-release/) version [21.1.1](https://github.com/semantic-release/semantic-release/releases/tag/v21.1.1) is used.
 
 #### branches
 > {Optional Input Parameter} The branches on which releases should happen.<br>`branches` supports for **semantic-release above v16**.
@@ -85,7 +85,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       semantic_version: 16
       # you can set branches for semantic-release above v16.
@@ -131,7 +131,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       semantic_version: 15.13.28
       # you can set branch for semantic-release older than v16.
@@ -156,7 +156,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       # You can specify specifying version range for the extra plugins if you prefer.
       extra_plugins: |
@@ -186,7 +186,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       dry_run: true
     env:
@@ -202,7 +202,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       ci: false
     env:
@@ -220,7 +220,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       # You can extend an existing shareable configuration.
       # And you can specify version range for the shareable configuration if you prefer.
@@ -240,7 +240,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       # You can select another working directory like a subdirectory for example.
       working_directory: ./code
@@ -257,7 +257,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       tag_format: custom-v${version}
     env:
@@ -279,7 +279,7 @@ steps:
       git config --global user.email github-actions@github.com
       git merge --no-ff origin/${{ github.event.pull_request.head.ref }} --message "${{ github.event.pull_request.title }}"
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     with:
       unset_gha_env: ${{ github.event_name == 'pull_request' }}
       ci: ${{ github.event_name == 'pull_request' && false || '' }}
@@ -310,7 +310,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Semantic Release
-    uses: cycjimmy/semantic-release-action@v4
+    uses: jetsales/semantic-release@main
     id: semantic   # Need an `id` for output variables
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
