@@ -38,7 +38,6 @@ exports.handleBranchesOption = () => {
   const jsonOrStr = stringToJson('' + strNeedConvertToJson);
   core.debug(`Converted branches attribute: ${JSON.stringify(jsonOrStr)}`);
   branchesOption.branches = jsonOrStr;
-  console.log(branchesOption);
   return branchesOption;
 };
 

@@ -35,7 +35,13 @@ const release = async () => {
   const semanticRelease = await import('semantic-release');
 
   const result = await semanticRelease.default({
-    ...handleBranchesOption(),
+    branches: [
+      'main',
+      {
+        name: process.env.GITHUB_REF_NAME,
+        prerelease: 'beta'
+      }
+    ],
     ...handleDryRunOption(),
     ...handleCiOption(),
     ...handleExtends(),
