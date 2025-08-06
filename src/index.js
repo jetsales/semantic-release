@@ -53,14 +53,15 @@ const release = async () => {
       ["semantic-release-jira-notes", {
       "jiraHost": "jetsalesbrasil.atlassian.net",
       "ticketPrefixes": ["CHAT", "US"]
-    }],
+    }]
+       ]},
     ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleCiOption(),
     ...handleExtends(),
     ...handleTagFormat(),
     ...handleRepositoryUrlOption()
-    ]}
+   
   });
 
   await cleanupNpmrc();
