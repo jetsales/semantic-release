@@ -49,17 +49,17 @@ const release = async () => {
     ]}
   });
   const result = await semanticRelease.default({
+    ...{plugins: [
+      ["semantic-release-jira-notes", {
+      "jiraHost": "jetsalesbrasil.atlassian.net",
+      "ticketPrefixes": ["CHAT", "US"]
+    }],
     ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleCiOption(),
     ...handleExtends(),
     ...handleTagFormat(),
-    ...handleRepositoryUrlOption(),
-    ...{plugins: [
-      ["semantic-release-jira-notes", {
-      "jiraHost": "jetsalesbrasil.atlassian.net",
-      "ticketPrefixes": ["CHAT", "US"]
-    }]
+    ...handleRepositoryUrlOption()
     ]}
   });
 
