@@ -49,7 +49,6 @@ const release = async () => {
     ...handleRepositoryUrlOption(),
     plugins: [
       '@semantic-release/changelog',
-      'semantic-release-jira-notes',
       '@semantic-release/git',
       '@semantic-release/commit-analyzer',
       '@semantic-release/github'
