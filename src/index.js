@@ -40,7 +40,7 @@ const release = async () => {
     ...handleExtends(),
     ...handleTagFormat(),
     ...handleRepositoryUrlOption(),
-    ..{plugins: [
+    ...{plugins: [
       ["semantic-release-jira-notes", {
       "jiraHost": "jetsalesbrasil.atlassian.net",
       "ticketPrefixes": ["CHAT", "US"]
