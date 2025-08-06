@@ -49,19 +49,20 @@ const release = async () => {
     ]}
   });
   const result = await semanticRelease.default({
-    ...{plugins: [
+    ...{
+      plugins: [
       ["semantic-release-jira-notes", {
       "jiraHost": "jetsalesbrasil.atlassian.net",
       "ticketPrefixes": ["CHAT", "US"]
-    }]
-       ]},
-    ...handleBranchesOption(),
+      }]
+       ]
+      ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleCiOption(),
     ...handleExtends(),
     ...handleTagFormat(),
     ...handleRepositoryUrlOption()
-   
+    },
   });
 
   await cleanupNpmrc();
