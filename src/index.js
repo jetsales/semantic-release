@@ -55,7 +55,7 @@ const release = async () => {
       "jiraHost": "jetsalesbrasil.atlassian.net",
       "ticketPrefixes": ["CHAT", "US"]
       }]
-       ]
+       ],
       ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleCiOption(),
