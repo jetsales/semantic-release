@@ -48,7 +48,13 @@ const release = async () => {
     ...handleTagFormat(),
     ...handleRepositoryUrlOption(),
     plugins: [
-      ["semantic-release-jira-notes", {
+      '@semantic-release/changelog',
+      'semantic-release-jira-notes',
+      '@semantic-release/git',
+      '@semantic-release/commit-analyzer',
+      '@semantic-release/github'
+      [
+        "semantic-release-jira-notes", {
       "jiraHost": "jetsalesbrasil.atlassian.net",
       "ticketPrefixes": ["CHAT", "US"]
     }]
