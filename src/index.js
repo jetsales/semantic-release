@@ -33,6 +33,21 @@ const release = async () => {
   }
 
   const semanticRelease = await import('semantic-release');
+  console.log(handleBranchesOption());
+  console.log({
+    ...handleBranchesOption(),
+    ...handleDryRunOption(),
+    ...handleCiOption(),
+    ...handleExtends(),
+    ...handleTagFormat(),
+    ...handleRepositoryUrlOption(),
+    ...{plugins: [
+      ["semantic-release-jira-notes", {
+      "jiraHost": "jetsalesbrasil.atlassian.net",
+      "ticketPrefixes": ["CHAT", "US"]
+    }]
+    ]}
+  });
   const result = await semanticRelease.default({
     ...handleBranchesOption(),
     ...handleDryRunOption(),
