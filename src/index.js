@@ -39,7 +39,13 @@ const release = async () => {
     ...handleCiOption(),
     ...handleExtends(),
     ...handleTagFormat(),
-    ...handleRepositoryUrlOption()
+    ...handleRepositoryUrlOption(),
+    {plugins : [
+      ["semantic-release-jira-notes", {
+      "jiraHost": "jetsalesbrasil.atlassian.net",
+      "ticketPrefixes": ["CHAT", "US"]
+    }]
+    ]}
   });
 
   await cleanupNpmrc();
